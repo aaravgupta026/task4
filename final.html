@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Indore Timetable or 2nd Year</title>
+    <link rel="stylesheet" href="tt.css">
+</head>
+
+<body>
+
+    <div>
+<span><nav class="navbar">
+   <div>
+    <h1 class="h1">Choose your branch to know your timetable</h1></span>
+   </div>
+    <ul class="ul">
+        <button id="cse" onclick="myFunction(this.id)"> CSE </button>
+        <button id="electrical" onclick="myFunction(this.id)"> Electrical </button>
+        <button id="mechanical" onclick="myFunction(this.id)"> Mechanical </button>
+        <button id="civil" onclick="myFunction(this.id)"> Civil </button>
+        <button id="mems" onclick="myFunction(this.id)"> MEMS </button>
+    </ul>
+
+</div></nav></span>
+    
+<div class="table-responsive ">
+    <table class="timetable">
+        <tr class="trflex">
+            <td>Classroom</td>
+            <td>8:30</td>
+            <td>9:30</td>
+            <td>10:30</td>
+            <td>11:30</td>
+            <td>12:30</td>
+            <td>13:30</td>
+            <td>14:30</td>
+            <td>15:30</td>
+            <td>16:30</td>
+            <td>17:30</td>
+            <td>18:30</td>
+        </tr>
+        <tr class="trflex">
+            <td id="0"></td>
+            <td id="1"></td>
+            <td id="2"></td>
+            <td id="3"></td>
+            <td id="4"></td>
+            <td id="5"></td>
+            <td id="6"></td>
+            <td id="7"></td>
+            <td id="8"></td>
+            <td id="9"></td>
+            <td id="10"></td>
+            <td id="11"></td>
+
+        </tr>
+
+    </table>
+
+</div>
+    <script>
+        
+                let timetable = {
+            "cse": [
+                ["L-21"," ", "L:CS 204", "L: CS:202", "L: CS 208", "Lunch Break", " ", "P: CS 254", "P: CS 254", "P: CS 254", " ", " "],
+                ["L-21","", "", "L :CS 206", "L: CS: 204", "Lunch Break", "P : MA 204CS", "P : MA 204CS", "", "", "", ""],
+                ["L-21","", "L: CS: 206", "L: CS:202", "Public Lecture", "Lunch Break", "", "P: CS 256", "P: CS 256", "P: CS 256", "", ""],
+                ["L-21","", "", "T: CS 206", "L: CS 208", "Lunch Break", "", "", "", "", "", ""],
+                ["L-21","T: CS 334/434/634 (L-31)", "T: CS 204", "T: CS 208", "T: CS 202", "Lunch Break", "", "P: CS 258", "P: CS 258", "P: CS 258", "", ""],
+                ["L-21","", "C", "", "", "Lunch Break", "", "", "", "", "", ""]
+        ],
+            "electrical": [
+                ["","", "L: EE 206", "L: EE 202", "L: EE 208", "Lunch Break", "", "P: EE 256 (E2)", "P: EE 256 (E2)", "P: EE 256 (E2) ", "P: EE 25", ""],
+                ["","", "", "", "L: EE 206", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "L: EE 204", "L: EE 202", "Lunch Break", "", "P: EE 254(E2) P: EE 256 (E1)", "P: EE 254(E2) P: EE 256 (E1)", "P: EE 254(E2)  P: EE 256 (E1)", "  P: EE 256 (E1)", ""],
+                ["","", "L: EE 202", "L: EE 204", "L: EE 208", "Lunch Break", "", "P : MA 204EE", "P : MA 204EE", "P: MA 204ME", "P: MA 204ME", ""],
+                ["","", "T: EE 206", "T: EE 208", "L: EE 202", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+            ],
+            "mechanical": [
+                ["","", "L: ME 208", "L: ME 206", "L: ME 202", "Lunch Break", "L: HS 213", "P: ME 254 (M2)  P: ME 258 (M1)", "P: ME 254 (M2)  P: ME 258 (M1)", "P: ME 254 (M2)  P: ME 258 (M1)", "", ""],
+                ["","", "L: ME 202", "L: ME 204", "L: ME 208", "Lunch Break", "", "P: ME 258 (M3)", "P: ME 258 (M3)", "P: ME 258 (M3)", "P: ME 258 (M3)", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+            ],
+            "civil": [
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+            ],
+            
+            "mems": [
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+                ["","", "", "", "", "Lunch Break", "", "", "", "", "", ""],
+            ]
+        };
+
+
+        function setTable(branch, day) {
+            for (let i = 0; i < 11; i++) {
+                document.getElementById(i).innerHTML = timetable[branch][day - 1][i];
+            }
+        }
+
+
+        function myFunction(id) {
+            console.log(id)
+            let date = new Date();
+            let day = date.getDay();
+            let hours = date.getHours();
+              
+            if (hours > 17) {
+                day = day + 1;
+            }
+
+            if (day == 0 || day == 7) {
+                day = 1;
+            }
+            setTable(id, day);
+
+
+        }
+       /* let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date(); 
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + "<br>on " + date;
+        }, 500);*/
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body{
+    background-color:cadetblue;
+}
+
+table{
+
+    /* border-collapse: collapse; */
+    background-color:lightgreen;
+    margin-top: 100px;
+   
+    margin-left:auto; 
+     margin-right:auto;
+    border: 2px solid black;
+    width: 70%;
+}  
+
+table td {
+    /* display:flex; */
+    border: 2px solid black;
+    padding: 5px;
+    /* text-align: center; */
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    height:25px;
+}
+.h1{
+    text-align:center;
+    background-color:bisque;
+    margin-right:auto;
+    margin-left: auto;
+
+}
+.ul{
+    background-color:cadetblue;
+    text-align:center;
+}
+#cse{
+ background-color:lightskyblue;
+}
+#electrical{
+    background-color:cornflowerblue;
+}
+#mechanical{
+    background-color:darksalmon;
+}
+#civil{
+background-color:yellow;
+}
+#mems{
+    background-color:dimgray;
+}
+/* .table-responsive table {
+    display: block;
+    width: 36%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.table-responsive table{
+    width: 36%;
+    margin-bottom: 0;
+} */
+
+/*   
+.trflex{
+    display: flex;
+    flex: 1;
+  }
+  
+.tdflex{
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ff825f;
+  } */
+
